@@ -17,6 +17,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  overflow: hidden;
 }
 
 * {
@@ -25,8 +26,25 @@
   box-sizing: border-box;
 }
 
-html {
-  padding: 40px;
+.app {
+  padding: 2rem;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 49, 71);
+  background: radial-gradient(
+    circle,
+    rgba(0, 49, 71, 0.4) 6%,
+    rgba(3, 32, 2, 4) 93%
+  );
+}
+
+.mainBgStripes {
+  position: absolute;
+  z-index: -1;
 }
 
 h1 {
@@ -41,7 +59,6 @@ h2 {
 .terminal-output {
   border: 1px solid #248030;
   padding: 1rem;
-  margin-top: 1rem;
 }
 
 .terminal-output-wrap {
@@ -49,12 +66,14 @@ h2 {
 }
 
 .user-input-wrap {
-  background-color: rgb(19, 18, 18);
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 
 button {
-  background-color: rgb(19, 18, 18);
-  border: 1px solid #248030;
+  background-color: transparent;
+  border: none;
   font-size: 1rem;
   font-family: dogica, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -63,6 +82,12 @@ button {
   margin-top: 1rem;
   margin-right: 2rem;
   color: #67d375;
+  width: 100%;
+  text-align: left;
+}
+
+button:hover {
+  background-color: #248030;
 }
 
 .disabled {
@@ -75,4 +100,12 @@ button {
 
 .inventory {
   margin-top: 1rem;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+.term-out {
+  margin-bottom: 1rem;
 }
