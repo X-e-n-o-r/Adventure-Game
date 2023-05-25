@@ -2,7 +2,6 @@ import React from "react"
 import Game from "./Game"
 import ItemsType from "./types/ItemsType"
 import { option } from "./types/GameType"
-import { TypeAnimation } from 'react-type-animation';
 
 const App: React.FC = () => {
   const [nodeId, setNodeId] = React.useState(1)
@@ -48,10 +47,22 @@ const App: React.FC = () => {
 		else return "";
 	};
 
+  const checkIsDisabled2 = (option: option) => {
+		let isDisabled = false;
+		if (option.required) {
+			option.required.forEach((item) => {
+				if (!inventory[item]) {
+					isDisabled = true;
+				}
+			});
+		}
+		if (isDisabled) return true;
+		else return false;
+	};
+
   return (
     <>
     <svg
-      xmlns="http://www.w3.org/2000/svg"
       width="100%"
       height="100%"
       className="mainBgStripes"
@@ -73,16 +84,14 @@ const App: React.FC = () => {
       <div className="terminal-output-wrap">
         <h1 className="term-out">» Terminal Output</h1>
         <div className="terminal-output">
-        <TypeAnimation
-        sequence={[
-          node.title  
-        ]}/>
+          {node.title}
         </div>
       </div>
       <div className="user-input-wrap">
         <h1>» Choose Your Commands Here</h1>
         {node.options.map((option, index) => (
           <button
+          disabled={checkIsDisabled2(option)}
           className={checkIsDisabled(option)}
           onClick={() => {onOptionClick(index)
           }}
@@ -91,7 +100,7 @@ const App: React.FC = () => {
           </button>
         ))}
       </div>
-      <div className="inventory">Inventory: {renderInventory()}</div>
+      <h1 className="inventory">Inventory: <br/>{renderInventory()}</h1>
     </div>
     </>
   )

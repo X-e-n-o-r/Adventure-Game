@@ -3,9 +3,14 @@
   src: url('/fonts/dogica.ttf');
 }
 
+@font-face {
+  font-family: dogicaBold;
+  src: url('/fonts/dogicabold.ttf');
+}
+
 :root {
   font-family: dogica, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.8;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -48,8 +53,10 @@
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 1rem;
+  letter-spacing: 3px;
   line-height: 1.1;
+  font-family: dogicaBold, dogica Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 h2 {
@@ -58,6 +65,7 @@ h2 {
 
 .terminal-output {
   border: 1px solid #248030;
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 1rem;
 }
 
@@ -91,7 +99,12 @@ button:hover {
 }
 
 .disabled {
-  border: 1px solid #414141;
+  color: #123c17;
+}
+
+.disabled:hover {
+  background-color: transparent;
+  cursor: not-allowed;
 }
 
 .btn:hover {
@@ -100,10 +113,7 @@ button:hover {
 
 .inventory {
   margin-top: 1rem;
-}
-
-h1 {
-  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .term-out {

@@ -4,13 +4,9 @@ import GameType from "./types/GameType";
 const Game: GameType = {
 	1: {
 		title:
-			`It was all a big myth-take...
-			
-			Local bigwig Mr. Zee has bulldozed the hilltop to make way for a gated community, O Mountain Estates, leaving everyone else to eke out a living down here in a depressing little village affectionately known as Squalor Holler. Saving the town will mean defeating Zee at his own game, but judging by the lightning bolt he carries around with him everywhere, I don't think butting heads with him is a good idea.
-			
+			`It was all a big myth-take... Local bigwig Mr. Zee has bulldozed the hilltop to make way for a gated community, O Mountain Estates, leaving everyone else to eke out a living down here in a depressing little village affectionately known as Squalor Holler. Saving the town will mean defeating Zee at his own game, but judging by the lightning bolt he carries around with him everywhere, I don't think butting heads with him is a good idea.
 			I will be your avatar in this world. I am new in town, so I won't be much help in explaining what's going on. We need to talk to people here to make things happen. If you know a character has info we need, try a command like SAY HI or SAY another character's name to trigger further dialogue or other events.
-			
-			I am in the Squalor Holler town square.
+			I am in the Squalor Holler town square.                                                                                       
 			Here in the center of town, the space is dominated by a large statue of a lightning bolt just to remind us who is in charge here. Dirt paths lead off in all directions. To the north is a blacksmith's forge, and to the south I see a ramshackle building with a sign declaring it to be "Theena's.`,
 		options: [
 			{ title: "Remove the wire and move out of the room!", nextNodeId: 2 },
