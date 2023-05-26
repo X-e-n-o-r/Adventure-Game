@@ -7,7 +7,9 @@ const App: React.FC = () => {
   const [nodeId, setNodeId] = React.useState(1)
   const [inventory, setInventory] = React.useState<Record<ItemsType, boolean>>({
     Flashlight: false,
-    Gun: false,
+    Shovel: false,
+    Compass: false,
+    Saw: false
   });
   
   const node = Game[nodeId];
@@ -27,7 +29,7 @@ const App: React.FC = () => {
     for (let key in inventory) {
       const k = key as keyof typeof inventory;
       if (inventory[k]){
-        list += `${key}`
+        list += ` ${key}`
       }
     }
 
@@ -84,13 +86,14 @@ const App: React.FC = () => {
       <div className="terminal-output-wrap">
         <h1 className="term-out">» Terminal Output</h1>
         <div className="terminal-output">
-          {node.title}
+        {node.title}
         </div>
       </div>
       <div className="user-input-wrap">
         <h1>» Choose Your Commands Here</h1>
         {node.options.map((option, index) => (
           <button
+          key={index}
           disabled={checkIsDisabled2(option)}
           className={checkIsDisabled(option)}
           onClick={() => {onOptionClick(index)
@@ -100,7 +103,7 @@ const App: React.FC = () => {
           </button>
         ))}
       </div>
-      <h1 className="inventory">Inventory: <br/>{renderInventory()}</h1>
+      <div className="inventory"><span>» Inventory</span> <br/>{renderInventory()}</div>
     </div>
     </>
   )
