@@ -2,6 +2,7 @@ import React from "react"
 import Game from "./Game"
 import ItemsType from "./types/ItemsType"
 import { option } from "./types/GameType"
+import TypeWriter from "./TypeWriter"
 
 const App: React.FC = () => {
   const [nodeId, setNodeId] = React.useState(1)
@@ -86,7 +87,7 @@ const App: React.FC = () => {
       <div className="terminal-output-wrap">
         <h1 className="term-out">» Terminal Output</h1>
         <div className="terminal-output">
-        {node.title}
+        <TypeWriter text={node.title}/>
         </div>
       </div>
       <div className="user-input-wrap">
