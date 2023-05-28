@@ -15,7 +15,7 @@
 
   color-scheme: light dark;
   color: #67d375;
-  background-color: rgb(19, 18, 18);
+  background-color: #032002;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,12 +30,11 @@
   box-sizing: border-box;
 }
 
+
 .app {
   padding: 2rem;
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: rgb(0, 49, 71);

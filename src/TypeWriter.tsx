@@ -14,13 +14,13 @@ const TypeWriter: React.FC<TypeProps> = ({text}) => {
     
 
     useEffect(() => {
-        const timeoutid = setTimeout(() => {
+        if (index.current < text.length) {const timeoutid = setTimeout(() => {
             setCurrentText((value) => value + text.charAt(index.current));
-            index.current += 1
+            index.current += 1;
         },30)
         return () => {
             clearTimeout(timeoutid);
-        }
+        }}
     }, [currentText, text])
     
 

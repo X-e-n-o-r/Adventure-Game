@@ -77,9 +77,11 @@ const Game: GameType = {
 		title: "щLooks like it no longer works, arrow just keeps spinning. Bullshit ",
 		options: [
 		{ title: "Use saw to open the blocked road",
-			required: ['Saw']},
+			required: ['Saw'],
+			nextNodeId: 11},
 		{ title: "Use shovel to open the blocked road",
-			required: ['Shovel']},
+			required: ['Shovel'],
+			nextNodeId: 7},
 	  	{ title: "Use the unexplored path",
 		nextNodeId: 4 },],
 	},
