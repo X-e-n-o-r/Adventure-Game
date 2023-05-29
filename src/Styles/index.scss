@@ -123,3 +123,9 @@ button:hover {
 span {
   font-family: dogicaBold, dogica Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
+@media (max-with: 500px) {
+  .btn {
+    line-height: 3;
+  }
+}

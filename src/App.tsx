@@ -46,8 +46,8 @@ const App: React.FC = () => {
 				}
 			});
 		}
-		if (isDisabled) return "disabled";
-		else return "";
+		if (isDisabled) return "btn disabled";
+		else return "btn";
 	};
 
   const checkIsDisabled2 = (option: option) => {
