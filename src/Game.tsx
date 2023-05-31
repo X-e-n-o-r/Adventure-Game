@@ -2,419 +2,416 @@ import GameType from "./types/GameType";
 
 const Game: GameType = {
 	1: {
-		title:`YYou are a lonely camper who fell asleep in a tent in a quiet forest. You suddenly wake up in the middle of the night due to strange noize.
-		This sound is definitely not human. It sounds like a vile transformation of flesh. Getting out of your tent you see how the forest is transformed. The trees start blocking out the sunlight leaving you in the dark.
-		You NEED to get out of this forest`,
+		title:`
+		You sit in your cottage and look at the beautiful views of Dubai. Your new Bugatti Hurricane is in the parking lot, and next to you is your most beautiful wife.
+		`,
 		options: [
-			{ 	title: "Get items from your tent",
-				newState: {
-					Flashlight: true,
-					Compass: true
-				},
-				nextNodeId: 2 },
-			{
-				title: "Go the unexplored path",
-				nextNodeId: 4
+			{ 	title: "Wake Up",
+			    nextNodeId: 2
 			},
-			{ 	title: "Use the road you got here", 
-				nextNodeId: 8 },
 		],
 	},
 	2: {
 		title:
-			`шIn a panic, you return to the tent. Your eyes are obsessively searching for useful items. Luckily you find a compass flashlight and a...`,
+			`TThe the view falls away like a mirage in the distance.
+			Fluorescent lights that hang from derelict buildings leak in from the edges of the screen as the visor leaves my eyes.
+			I pull the headset off entirely, but my bio-connector is caught. `,
 		options: [
-			{ title: "Saw",
-			  newState: {
-				Saw: true
-			  },
-			  nextNodeId: 3 },
-			{
-				title: "Shovel",
-				newState: {
-					Shovel: true
-				  },
-				nextNodeId: 3,
-			}
+			{ title: "Tare the wire from your neck",
+			  nextNodeId: 3 }
 		],
 	},
 	3: {
 		title:
-			"щYou've calmed down a bit, what do you do now?",
+			`aAs the wire comes loose it scratches.
+			"Argh!" The pain fades slowly. I flick the metallic sheath on my neck back in to place.
+			"Still need to get that fixed...", no one was listening, least of all me.
+			
+			"Talking to yourself?", my new partner calls out as he climbs from his cab.
+			`,
 		options: [
-			{ title: "Use saw to open the blocked road",
-			  required: ['Saw'],
-			  nextNodeId: 11},
-			{ title: "Use shovel to open the blocked road",
-			  required: ['Shovel'],
-			  nextNodeId: 7},
-			{ title: "Use the unexplored path",
+			{ title: '"I guess I must be."',
 			  nextNodeId: 4 },
-			{ title: "Check the compass",
-			  required: ['Compass'],
-			  nextNodeId: 6 },
 		],
 	},
 	4: {
 		title:
-			"щWalking along the path, you notice that not only the forest is mutating, but also all living things in the forest. Animals have become like monsters. And you are tormented by the question, is it possible that this will happen to you?",
+			`HHe approaches me; a big guy with a smile engulfed by his cheeks.
+			He makes some joke about the "lovely weather".
+			
+			"So... apparently we got some guy is on the fritz. Musta' modified his socket or something." He smiles before realizing he shouldn't. I attempt to walk past him, but he grabs my wrist as I do, staring at me intently.
+			
+			"After my first one, I always bring this." He holds up a small letter opener with a bronze handle, wrapped in a leather scabbard.
+			"Since you've requested to conduct this, want it?", he asks.`,
 		options: [
 			{
-				title: "Use the reflection of the compass to look at yourself",
-				required: ['Compass'],
+				title: '"Eugh... Okay, just incase."',
+				newState: {
+					Knife: true
+				},
 				nextNodeId: 5,
 			},
-			{ title: "You notice a shack in the distance", nextNodeId: 9 },
+			{ title: '"You hold on to it."', nextNodeId: 55 },
+		],
+	},
+	55: {
+		title: `hHe pockets the knife.
+
+		Thunder cracks across the sky, the acid-rain intensifies. We look up at the building, nothing distinguishes it from the others; same balconies, same fluorescent lights, same algae smell.
+		`,
+		options: [
+			{ title: "Head inside", nextNodeId: 56 },
+		],
+	},
+	56: {
+		title: `mMoisture lingers in the air. Wallpaper hangs from damp walls painted green by Chlorella.
+
+		We aren't alone. Modders lay across the floor, leaning against the walls, or hanging from plastic chairs. Each of them has a visor active.
+		
+		Suddenly an elderly man rushes in through the hallway. He speeds towards me. I stiffen in a moment of helplessness, but he turns away just in time.
+		
+		I take a breath and my parner looks at me smuggly, before tapping the knife holstered against his gut.
+		`,
+		options: [
+			{ title: "Continue to the hallway", nextNodeId: 7},
 		],
 	},
 	5: {
-		title: "щWhen you look at your face, you realize that it looks terrible. The skin turned green, the eyes turned yellow. The forest becomes you and you become the forest",
+		title: `"iI take the knife and holstered it in my belt.
+
+Thunder cracks across the sky, the acid-rain intensifies. We look up at the buildings. Nothing distinguishes it from the others; same balconies, same fluorescent lights, same algae smell."`,
 		options: [
-			{ title: "You notice a shack in the distance", nextNodeId: 9 },
+			{ title: "Head inside ", nextNodeId: 6 },
 		],
 	},
 	6: {
-		title: "щLooks like it no longer works, arrow just keeps spinning. Bullshit ",
+		title: `MMoisture lingers in the air. Wallpaper hangs from damp walls painted green by Chlorella.
+
+		We aren't alone. Modders lay across the floor, leaning against the walls, or hanging from plastic chairs. Each of them has a visor active.
+		
+		Suddenly an elderly man rushes in through the hallway. He speeds towards me and I reach for the knife!
+		
+		But he turns away just in time. I take a breath. My parner looks at me and nodded.
+		`,
 		options: [
-		{ title: "Use saw to open the blocked road",
-			required: ['Saw'],
-			nextNodeId: 11},
-		{ title: "Use shovel to open the blocked road",
-			required: ['Shovel'],
+		{ title: "Continue to the hallway",
 			nextNodeId: 7},
-	  	{ title: "Use the unexplored path",
-		nextNodeId: 4 },],
+		]
 	},
 	7: {
-		title: "щShovel is to slow with removing the trees, it grows back...",
+		title: `IIn the hallway I feel surrounded as the modders glare at us through their visors like robotic cyclopses.
+
+		The faint sounds of a scream echoed from upstairs...
+		
+		"Apparently they tied him to a table in the living quarters, want to go there first?", my partner asks.`,
 		options: [
-			{ title: "Use the unexplored path",
-			nextNodeId: 4 },
-		  { title: "Check the compass",
-			required: ['Compass'],
-			nextNodeId: 6 },
+			{ title: '"Let\'s check his bedroom first"',
+			nextNodeId: 8 },
+		  { title: '"Let\'s go straight to the guy"',
+			nextNodeId: 19 },
 		],
 	},
 	8: {
-		title: "щYou can't get to the road. It's overgrown with trees. Maybe there is another path...",
-		options: [
-		{ 	title: "Get items from your tent",
-			newState: {
-			Flashlight: true,
-			Compass: true
-			},
-			nextNodeId: 2 },
-		{
-			title: "Go the unexplored path",
-			nextNodeId: 4
-		},
-		],
-	},
-	9: {
-		title: "щYou are getting closer and closer to the hut. From there you can hear the sounds of some kind of animal. It can be aggressive...",
-		options: [
-		{ 	title: "Open the door anyway",
-			nextNodeId: 10 },
+		title: `WWe head to his bedroom.
+
+		His floor is a landfill of rusted wiring, dust ridden motherboards and empty noodles boxes blooming with mould. The bed was a metallic frame with a single pillow resting against interconnecting springs.
 		
-		],
-	},
-	10: {
-		title: "щHaving opened a wooden hut, something that once was a person looks at you. His head is fused with his body. Eyes filled with anger. Branches grow from his skin. He will sharply attack you.",
+		I take it all in surroundings, before spotting a gun laying behind the bed
+		
+		I pick it up and hold it close so my partner can't see.`,
 		options: [
-		{ 	title: "Punch him with the shovel",
-			required: ['Shovel'],
-			nextNodeId: 25 },
-		{
-			title: "Fight with bare hands",
-			nextNodeId: 100
-		},
+		{ 	title: "Leave it",
+			nextNodeId: 11 },
+			{ 	title: "Take it with yourself",
+			newState: {
+				Gun: true
+			},
+			nextNodeId: 11 },
 		],
 	},
 	11 : {
-		title: "щYou managed to unblock the road home. But now you have another problem. A stray dog came to your sounds, it was huge and with two heads. She barked with all her might. Something needs to be done...",
+		title: `WWe head out to the hallway.
+
+		His faint screams vibrate through the walls.
+		
+		My partner turns to me.
+		"So... where now?", he asks.
+		`,
 		options: [
-		  { title: "Shine a flashlight into it's eyes",
+		  { title: '"Let\'s see if anyone knows something"',
 			nextNodeId: 12 },
-		  { title: "Get ready for the attack",
-			required: ['Compass'],
-			nextNodeId: 200 },
+		  { title: '"Let\'s go straight to the guy"',
+			nextNodeId: 19 },
 		],
 	},
 	12 : {
-		title: "щThe light only made her angrier. The dog jumped on you and grabbed your leg. It bit your leg to the bone",
+		title: `iI take a look at the Modders; all plugged in, all vacant. Trait Visors are as commonplace now as mobile phones were decades ago. They were sold as an biotic enhancement primarily useful for tech jobs, however, Modders eventually found the neural link allowed visors to project fully rendered memory, or "windows".
+		Windows are highly addictive, but destroy the mind.
+		
+		"So who first?", my partner asks. None of the options were enticing;`,
 		options: [
-		  { title: "Cut her with the saw",
-			nextNodeId: 200 },
-		  { title: "Punch her with a flashlight",
-			required: ['Compass'],
-			nextNodeId: 14 },
+		  { title: '"Let\'s talk to that old man slumped agaist the wall"',
+			nextNodeId: 13 },
+		  { title: '"Let\'s talk to the couple laying together"',
+			nextNodeId: 16 },
 		],
 	},
 
 	13 : {
-		title: "щThe light only made her angrier. The dog jumped on you and grabbed your leg. It bit your leg to the bone",
+		title: `iWe approach the Old Man. As he sees us near he tares the jack from his neck and his visor powers off.
+
+		"SCUM!", his voice was enraged, yet fragile. "Scum the lot'a ya". Neiter myself or my partner say a word.
+		"You're hear to trap him, aren't ya? You're gonna pull him out and cage him in this... this... hell!". My partner pulls the mans head back, I now see his missing teeth, scarred eye and blotched skin.
+		
+		"My uncle went the same way. Fucking things, man... and he thinks out here is hell". My partner reflects.
+		"You've not used one, have you?" I ask to no response. He puts his hand on my shoulder; had he seen my using mine?`,
 		options: [
-		  { title: "Сut her with the saw",
-		    required: ['Saw'],
-			nextNodeId: 200 },
-		  { title: "Punch her with a flashlight",
-			required: ['Flashlight'],
-			nextNodeId: 14 },
+		  { title: `"I don't mod mine."`,
+			nextNodeId: 14 }
 		],
 	},
 	14 : {
-		title: "щThe blow from the flashlight briefly stunned her.",
+		title: `iMy partner's stare is remorseless. I see his eyes fall to my neck.
+		"I didn't think you did." He studies me.
+		
+		We turn back to the old man.
+		"Pluggin. Pluggin." The man begs us. I shake my head.
+		
+		My partner grabs him by his collar. I lean down and speak calmly.
+		"The guy. I need to find the gut."
+		"He's gone... too gone. "1903", she said".
+		
+		"Are you going to debug him?" He asks us.
+		I nodded.
+		"SCUM!", the word is followed a ball of saliva in my eye.
+		My partner throws the man to the ground.`,
 		options: [
-		  { title: "Hide in the trenches",
-			nextNodeId: 200 },
-		  { title: "Deliver the final blow",
-			required: ['Flashlight'],
-			nextNodeId: 16 },
+		  { title: "I wiped my eye and sighed.",
+			nextNodeId: 15 }
 		],
 	},
 	15 : {
-		title: "щThe blow from the flashlight briefly stunned her.",
+		title: `iI take a step back. The old man claws at his neck, but can't find the jack.
+
+		"Don't help him." My partner orders me.`,
 		options: [
-		  { title: "Hide in the trenches",
-			nextNodeId: 300 },
-		  { title: "Deliver the final blow",
-			required: ['Flashlight'],
-			nextNodeId: 15 },
-		],
-	},
-	16 : {
-		title: "щYou painted her skull with a flashlight. The second one too. But gotta deal with the bleeding",
-		options: [
-		  { title: "Use the leathes to stop bleeding",
-			nextNodeId: 17 },
-		  { title: "Cut off your leg",
-			required: ['Saw'],
-			nextNodeId: 400 },
-		],
-	},
-	17 : {
-		title: `щYou're plucking leaves from nasty trees, it's not clear if this can help, but this is the only thing you came up with. Leaning the leaves noticed that .... they are the same color? Is your skin turning green?
-		It doesn't matter now, we need to stop the bleeding. You lean the leaves against your leg and they begin to connect with your body. You become one with the forest and don't even notice it...`,
-		options: [
-		  { title: "Use the opened path",
-			nextNodeId: 18 },
-		  { title: "Use the reflection of the compass to look at yourself",
-			required: ['Compass'],
+		  { title: `"Let's just go talk to that couple"`,
+			nextNodeId: 16 },
+		  { title: `"Let's just get to the guy"`,
 			nextNodeId: 19 },
 		],
 	},
-	18 : {
-		title: `щThe road you got here looks way different. The forest has become denser, crows are constantly heard, the forest has become more alive but hostile to humans. He consumes you`,
+	16 : {
+		title: `1We approach the couple. They lay against a torn leather sofa with their limbs entwined. His visor plugged into his neck, his visor into his. Both expressionless.
+		I push my boot into the man's ribs and he grunts. This was hopeless.
+		"Hey, you chose to speak to them.", my partner informs me as we return to the centre of the hallway.
+		"Where next then?"`,
 		options: [
-		  { title: "Something calls you...",
-			nextNodeId: 21 },
+		  { title: `"We've wasted enough time now, let's get to the guy"`,
+			nextNodeId: 17 },
+		],
+	},
+	17 : {
+		title: `1Other Modders flee the room as we approach. The glare at us with a vacant stare. "Scum". "Scum".
+
+		The guy's scream's abruptly halt as she claws for breath.
+		Then they begin again. My partner rushes ahead.
+		
+		I stop.`,
+		options: [
+		  { title: "I see him",
+			nextNodeId: 18 },
+		],
+	},
+	18 : {
+		title: `1The table shudders as she thrashes his body back and forth across it. His arms and legs are bound to each table leg. He cries out in agony, his eyes transfixed on the window of his visor. Blood pours from his bio-connector. I stare at his withered face. Scars connect from his mouth to him cheek, his eyes bloodshot and unfamiliar.
+		
+		"Look like you've seen a ghost", my partner studies my every move. He knows something is up. It doesn't matter either way.`,
+		options: [
+		  { title: "Hesitantly, I approach.",
+			nextNodeId: 19 },
 		],
 	},
 	19 : {
-		title: `щWhen you look at your face, you realize that it looks terrible. The skin turned green, the eyes turned yellow. The forest becomes you and you become the forest`,
+		title: `1My partner begins the procedure. He pulls out his visor and scans him.
+
+		"His neural activity is hyperactive. Nothing showing on his visor though... looks like he's stuck in a render loop." He looks at me and continues. "He can't find what he's looking for".
+		
+		Suddenly I am flooded with debugging procedure; erase his memory, sever his connections. I made a mistake requesting this job. I shouldn't make this decision.
+		
+		"What do you think we should do?" He asks.`,
 		options: [
-		  { title: "Not the time to complain. Use the opened path",
-			nextNodeId: 18 },
+		  { title: `"I'll cut the wires"`,
+			required: ['Knife'],
+			nextNodeId: 20,},
+		  { title: `"Let's try diagnostic first"`,
+			nextNodeId: 26,},
+		  { title: `"Erase it all"		  `,
+			nextNodeId: 30 },
 		],
 	},
 	20 : {
-		title: `щWhen you look at your face, you realize that it looks terrible. The skin turned green, the eyes turned yellow. The forest becomes you and you become the forest`,
+		title: `"1Well, i think it is not really safe, but if you think it is right, then fine"
+
+		You cut the wires connected to him, foam starts to come out of his mouth.
+		
+		"Is he dead?"
+
+		After these words, the visor comes off his eyes. He is alive and very angry. 
+		"Why did you disconnect me??"
+		He pulls a gun out of his pocket and point it on my partner.
+		`,
 		options: [
-		  { title: "Use the opened path",
-			nextNodeId: 18 },
-		],
-	},
-	21 : {
-		title: `щHeeere.... Come heeeeree. A mesmerizing voice is calling you. He is dressed from the depths of the forest. Your wooden body reaches out there...`,
-		options: [
-		  { title: "I need to help someone?",
-			nextNodeId: 900 },
-		  { title: "Ignore it, cant help others if you cant help yourself...",
-			nextNodeId: 22 },
-		],
-	},
-	22 : {
-		title: `щHeeere.... Come heeeeree. A mesmerizing voice is calling you. He is dressed from the depths of the forest. Your wooden body reaches out there...`,
-		options: [
-		  { title: "I need to help someone?",
-			nextNodeId: 900 },
-		  { title: "Ignore it, cant help others if you cant help yourself...",
-			nextNodeId: 24 },
-		],
-	},
-	24 : {
-		title: `щYou continue on your way and the forests. The whisper is getting louder. Covering your ears with your hands doesn't help. The legs are getting heavier. They turn into a tree and try to stick to the ground`,
-		options: [
-		  { title: "Cut your wooden toes with a saw",
-		    required: ['Saw'],
-			nextNodeId: 800 },
-		  { title: "Continue moving",
-			nextNodeId: 700 },
+		  { title: `Kill him with one of your own`,
+			required: ['Gun'],
+			nextNodeId: 21 },
+		  { title: `Calm him down`,
+			nextNodeId: 200 }
 		],
 	},
 	25 : {
-		title: `щYou managed to break his skull with a shovel. The body of the mutant fell to the floor`,
+		title: `1You pull a gun out of your pocket and shoot him in the head.
+		"Woah, thanks for saving me but you didn't really had to kill him"
+		"I decieded quick"
+		`,
 		options: [
-		  { title: "Continue moving through the forest",
-			nextNodeId: 28 },
-		  { title: "Inspect the hut",
+		  { title: "Get out of the building",
+			nextNodeId: 100 },
+		],
+	},
+	26 : {
+		title: `1Partner uses his monitor to access an administration terminal. 
+		TERMINAL ACCESS GRANTED
+		`,
+		options: [
+		  { title: "RUN DIAGNOSTIC",
 			nextNodeId: 27 },
 		],
 	},
 	27 : {
-		title: `щIt appears to be the home of a former forester. After examining the dwelling, you notice a photograph on the table. You pick it up from the table. This is a photo of him with his family. It's a reminder that if you don't get out of here, you won't see your family.`,
+		title: `1A stream of code runs down the monitor with functions labelled after memories.
+
+		Some are clear fabrications; memories of sunshine, beaches and a birthday party. He probably payed good money for them.
+		
+		The functions vanish as the error is found, one memory stuck on an infinite loop.
+		
+		1 System Error Found;
+		`,
 		options: [
-		  { title: "Continue moving through the forest",
+		  { title: "//infernium;",
 			nextNodeId: 28 },
 		],
 	},
 	28 : {
-		title: `щYou are looking at the forest. Your senses are sharpened. What? You just heard a car in the distance. The road is here somewhere`,
+		title: `1"Here is the problem, he is high"
+		"Expected"
+		You pull out your medical suringe and put it in his veins,
+		`,
 		options: [
-		  { title: "The voices...",
-			nextNodeId: 21 },
-		  { title: "Check the compass",
+		  { title: "He wakes up",
 			nextNodeId: 29 },
 		],
 	},
 	29 : {
-		title: `щThe compass was broken but now shows the direction. But with each step in this direction, the body becomes heavier ...`,
+		title: `1"Uhhhh"
+		"Are you fine?"
+		"Yes i am just..."
+		"Do you know where are you?"
+		His face has no expression
+		"He will we fine, we need to head back to the base"
+		"Agree"
+		`,
 		options: [
-		  { title: "Go in this direction",
-			nextNodeId: 30 },
-		  { title: "It deceives me...",
-			nextNodeId: 21 },
-		],
+			{ title: "RESTART",
+			  nextNodeId: 1,
+			  newState: {
+				  Gun: false,
+				  Knife: false
+			  } },
+		  ],
 	},
 	30 : {
-		title: `щYou chose to trust chance. Each step is harder than the previous one. But the sound of the road is getting louder. With the last of your strength, you reach the road and fall on it. The sound of a car is heard. You are safe`,
+		title: `1His body writhes and pulsates. His visor searches frantically for a window.
+		
+		"You really want to jump to an erase? I mean we can, it's just quite a jump", a look of understanding in his eyes. 
+		`,
+		options: [
+			{ title: `"Yes, erase."`,
+			  nextNodeId: 31,},
+			  { title: `"No, let's try diagnostic"`,
+			  nextNodeId: 27,},
+		  ],
+	},
+	31 : {
+		title: `1My partner looks at me, somehow disappointed, but I have learned a single truth in the past 23 years; you can't polish something that's broken.
+
+		Millions of lines of code cross the screen in a flash, then again, then consistently.
+		
+		His eyes turn pale. Everything is taken away.
+		 
+		`,
+		options: [
+			{ title: `The program finishes`,
+			  nextNodeId: 32,}
+		  ],
+	},
+	32 : {
+		title: `1His muscles relax, he falls limp. It's complete.
+
+		My partner sighs and turns away. I lean over his body.I rest my hand against his forehead.
+		
+		Slowly his eyes begin to open.
+		"We should go before he wakes, we'll send social services to see about this place", I order.
+		
+		Disgust and disappointment are shot at me from my partner's eyes. 
+		 
+		`,
+		options: [
+			{ title: `We retreat from the building`,
+			  nextNodeId: 33,}
+		  ],
+	},
+	33 : {
+		title: `1"Do you think this was really necessary"
+		"Yes, he was broken, i've already told you"
+		`,
 		options: [
 			{ title: "RESTART",
+			  nextNodeId: 1,
+			  newState: {
+				  Gun: false,
+				  Knife: false
+			  } },
+		  ],
+	},
+	200 : {
+		title: `1"Calm down, you don't have to do this!"
+		"Shut up!"
+		He shoots your partner in the head, and before you realize, you are dead too
+		`,
+		options: [
+		  { title: "RESTART",
+			nextNodeId: 1,
 			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
+				Gun: false,
+				Knife: false
+			} },
 		],
 	},
-	100: {
-		title: "щYour hands are not capable of anything in front of a mutant. Its teeth rip through your flesh and break your bones as you scream in unbearable pain. It looks like this is where your life ends.",
+	100 : {
+		title: `1You pull a gun out of your pocket and shoot him in the head.
+		"Woah, thanks for saving me but you didn't really had to kill him"
+		"I decieded quick, i hate dealing with those junkies"
+		You both get out of this building
+		`,
 		options: [
 			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
-	},
-	200: {
-		title: "щThe saw was too weak to cause significant damage to the dog. You became food for the mongrel",
-		options: [
-			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
-	},
-	300: {
-		title: "щThe dog catches you trying to escape, You became food for the mongrel",
-		options: [
-			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
-	},
-	400: {
-		title: "щThis is probably the dumbest thing you've ever done. You obviosly died",
-		options: [
-			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
-	},
-	500: {
-		title: "щThis is probably the dumbest thing you've ever done. You obviosly died",
-		options: [
-			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
-	},
-	600: {
-		title: "щThis is probably the dumbest thing you've ever done. You obviosly died",
-		options: [
-			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
-	},
-	700: {
-		title: "щYou try to continue on your way but your wooden legs get stuck in the ground. You cannot feel your body. You are the new tree of this forest",
-		options: [
-			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
-	},
-	800: {
-		title: "щYou cut off the bottom of your wooden legs to keep moving. Finally you see the road. Each step is harder than the previous one. Your body falls to the asphalt. You hear a car stop next to you. Safety",
-		options: [
-			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
-	},
-	900: {
-		title: "щThe voice gradually begins to replace your inner one. You freeze. Your wooden legs go into the ground and turn into roots. You are now a tree",
-		options: [
-			{ title: "RESTART",
-			newState: {
-				Flashlight: false,
-				Compass: false,
-				Saw: false,
-				Shovel: false
-			},
-			nextNodeId: 1 },
-		],
+			  nextNodeId: 1,
+			  newState: {
+				  Gun: false,
+				  Knife: false
+			  } },
+		  ],
 	},
 };
 

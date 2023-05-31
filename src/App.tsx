@@ -7,10 +7,8 @@ import TypeWriter from "./TypeWriter"
 const App: React.FC = () => {
   const [nodeId, setNodeId] = React.useState(1)
   const [inventory, setInventory] = React.useState<Record<ItemsType, boolean>>({
-    Flashlight: false,
-    Shovel: false,
-    Compass: false,
-    Saw: false
+    Gun: false,
+    Knife: false
   });
   
   const node = Game[nodeId];

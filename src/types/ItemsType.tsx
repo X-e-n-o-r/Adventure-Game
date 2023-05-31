@@ -1,3 +1,3 @@
-type items = 'Flashlight' | 'Compass' | 'Shovel' | 'Saw';
+type items = 'Gun' | 'Knife';
 
 export default items;

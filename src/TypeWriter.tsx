@@ -17,7 +17,7 @@ const TypeWriter: React.FC<TypeProps> = ({text}) => {
         if (index.current < text.length) {const timeoutid = setTimeout(() => {
             setCurrentText((value) => value + text.charAt(index.current));
             index.current += 1;
-        },30)
+        },24)
         return () => {
             clearTimeout(timeoutid);
         }}
